@@ -3,7 +3,7 @@
 var readFile = require("../../helper").readFile,
   createModdle = require("../../helper").createModdle;
 
-xdescribe("import -> export roundtrip", function () {
+describe("import -> export roundtrip", function () {
   function stripSpaces(xml) {
     return xml
       .replace(/\n|\r/g, "")
@@ -31,14 +31,14 @@ xdescribe("import -> export roundtrip", function () {
     };
   }
 
-  describe("should keep camunda attributes", function () {
+  describe("should keep token attributes", function () {
     it(
-      "camunda:FormData",
-      validateExport("test/fixtures/xml/userTask-camunda-formData.bpmn"),
+      "tokens at activities and sequence flows",
+      validateExport("test/fixtures/xml/simple.bpmn"),
     );
 
-    it(
-      "camunda:InputOutput",
+    xit(
+      "running processes",
       validateExport("test/fixtures/xml/inputOutput-nestedList.bpmn"),
     );
   });

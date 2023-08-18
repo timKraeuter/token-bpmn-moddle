@@ -31,21 +31,5 @@ describe("token-bpmn-moddle", function () {
       // then
       expect(serviceTask.$instanceOf("token:Token")).to.be.true;
     });
-
-    xit("should ignore id property on camunda:FormField", async function () {
-      var xml = readFile("test/fixtures/xml/camunda-formField-ids.bpmn");
-
-      var moddle = createModdle();
-
-      // when
-      var { elementsById, warnings } = await moddle.fromXML(
-        xml,
-        "bpmn:Definitions",
-      );
-
-      // then
-      expect(warnings).to.be.empty;
-      expect(elementsById).not.to.have.property("variableA");
-    });
   });
 });
