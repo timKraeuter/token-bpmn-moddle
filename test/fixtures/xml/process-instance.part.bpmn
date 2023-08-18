@@ -1,0 +1,7 @@
+<bpmn:process>
+    <bpmn:extensionElements>
+        <camunda:processInstance xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+        id="Process_1"/>
+    </bpmn:extensionElements>
+</bpmn:process>

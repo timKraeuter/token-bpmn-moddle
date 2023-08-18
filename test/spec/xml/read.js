@@ -154,6 +154,30 @@ describe('read', function() {
         );
       });
 
+      it('on ServiceTask', async function() {
+
+        // given
+        var file = 'process-instance.part.bpmn';
+
+        // when
+        var { rootElement: serviceTask } = await fromFile(file, 'bpmn:Process');
+
+        // then
+        expect(serviceTask).to.jsonEqual({
+          $type: 'bpmn:Process',
+          extensionElements: {
+            $type: 'bpmn:ExtensionElements',
+            values: [
+              {
+                $type: 'camunda:ProcessInstance',
+                id: 'Process_1'
+              },
+            ],
+          },
+        }
+        );
+      });
+
     });
 
 
