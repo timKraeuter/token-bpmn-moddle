@@ -1,6 +1,6 @@
 # token-bpmn-moddle
 
-[![CI](../../workflows/CI/badge.svg)](https://github.com/timKraeuter/token-bpmn-moddle/actions/workflows/CI.yml)
+[![CI](https://github.com/timKraeuter/token-bpmn-moddle/actions/workflows/CI.yml/badge.svg)](https://github.com/timKraeuter/token-bpmn-moddle/actions/workflows/CI.yml)
 
 This project defines the token and process namespace extensions for BPMN 2.0 as a [moddle](https://github.com/bpmn-io/moddle) descriptor.
 We use processes and tokens to describe the state of running BPMN processes.

@@ -1,6 +1,6 @@
 {
   "name": "token-bpmn-moddle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Token moddle extensions for BPMN 2.0",
   "scripts": {
     "all": "run-s lint test",
@@ -20,6 +20,10 @@
   "author": {
     "name": "Tim Kräuter",
     "url": "https://timkraeuter.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timKraeuter/token-bpmn-moddle.git"
   },
   "license": "MIT",
   "devDependencies": {
