@@ -1,0 +1,38 @@
+{
+  "name": "token-bpmn-moddle",
+  "version": "1.0.0",
+  "description": "Token moddle extensions for BPMN 2.0",
+  "scripts": {
+    "all": "run-s lint test",
+    "lint": "eslint .",
+    "dev": "npm run test -- --auto-watch --no-single-run",
+    "test": "mocha -r ./test/expect --reporter=spec \"test/**/*.js\""
+  },
+  "keywords": [
+    "bpmn",
+    "moddle",
+    "bpmn20",
+    "token",
+    "meta-model"
+  ],
+  "author": {
+    "name": "Tim Kräuter",
+    "url": "https://timkraeuter.com/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bpmn-moddle": "^8.0.1",
+    "chai": "^4.3.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-bpmn-io": "^1.0.0",
+    "esm": "^3.2.25",
+    "glob": "^10.0.0",
+    "mocha": "^10.0.0",
+    "npm-run-all": "^4.1.2",
+    "p-series": "^2.1.0",
+    "xsd-schema-validator": "^0.7.0"
+  },
+  "files": [
+    "resources"
+  ]
+}
