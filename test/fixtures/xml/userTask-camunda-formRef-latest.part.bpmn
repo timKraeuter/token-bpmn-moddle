@@ -1,4 +1,0 @@
-<bpmn:userTask
-  camunda:formRef="formId"
-  camunda:formRefBinding="latest">
-</bpmn:userTask>

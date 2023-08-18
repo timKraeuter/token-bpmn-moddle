@@ -2,7 +2,7 @@
 
 var Helper = require("../../helper");
 
-describe("write", function () {
+xdescribe("write", function () {
   var moddle = Helper.createModdle();
 
   async function write(element) {

@@ -1,5 +1,5 @@
 <bpmn:process>
-    <camunda:runningProcess>1</camunda:runningProcess>
-    <camunda:runningProcess>2</camunda:runningProcess>
-    <camunda:runningProcess>3</camunda:runningProcess>
+    <token:runningProcess>1</token:runningProcess>
+    <token:runningProcess>2</token:runningProcess>
+    <token:runningProcess>3</token:runningProcess>
 </bpmn:process>

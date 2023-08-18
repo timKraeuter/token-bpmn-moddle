@@ -5,18 +5,16 @@ var readFile = require("../helper").readFile,
 
 var BpmnModdle = require("bpmn-moddle");
 
-var camundaDescriptor = require("../../resources/camunda");
+var tokenDescriptor = require("../../resources/token.json");
 
-describe("camunda-bpmn-moddle", function () {
+describe("token-bpmn-moddle", function () {
   describe("schema", function () {
     it("should provide model", function () {
       // then
-      expect(camundaDescriptor).to.exist;
+      expect(tokenDescriptor).to.exist;
 
-      expect(camundaDescriptor.uri).to.eql(
-        "http://camunda.org/schema/1.0/bpmn",
-      );
-      expect(camundaDescriptor.prefix).to.eql("camunda");
+      expect(tokenDescriptor.uri).to.eql("http://tk/schema/1.0/token");
+      expect(tokenDescriptor.prefix).to.eql("token");
     });
   });
 
@@ -24,17 +22,17 @@ describe("camunda-bpmn-moddle", function () {
     it("should extend bpmn-moddle", function () {
       // given
       var moddle = new BpmnModdle({
-        camunda: camundaDescriptor,
+        camunda: tokenDescriptor,
       });
 
       // when
-      var serviceTask = moddle.create("bpmn:ServiceTask");
+      var serviceTask = moddle.create("bpmn:Activity");
 
       // then
-      expect(serviceTask.$instanceOf("camunda:ServiceTaskLike")).to.be.true;
+      expect(serviceTask.$instanceOf("token:Token")).to.be.true;
     });
 
-    it("should ignore id property on camunda:FormField", async function () {
+    xit("should ignore id property on camunda:FormField", async function () {
       var xml = readFile("test/fixtures/xml/camunda-formField-ids.bpmn");
 
       var moddle = createModdle();

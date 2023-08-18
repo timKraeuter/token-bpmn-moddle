@@ -10,11 +10,11 @@ module.exports.readFile = readFile;
 
 var BpmnModdle = require("bpmn-moddle");
 
-var camundaDescriptor = require("../resources/camunda");
+var tokenDescriptor = require("../resources/token.json");
 
 function createModdle() {
   return new BpmnModdle({
-    camunda: camundaDescriptor,
+    token: tokenDescriptor,
   });
 }
 
