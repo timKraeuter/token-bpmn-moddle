@@ -7,7 +7,6 @@ We use processes and tokens to describe the state of running BPMN processes.
 
 ## Building the Project
 
-To run the test suite that includes XSD schema validation you must have a Java JDK installed and properly exposed through the `JAVA_HOME` variable.
 
 Execute the test via
 
