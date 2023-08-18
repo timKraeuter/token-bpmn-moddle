@@ -1,0 +1,5 @@
+<bpmn:sequenceFlow>
+    <camunda:token>1</camunda:token>
+    <camunda:token>2</camunda:token>
+    <camunda:token>3</camunda:token>
+</bpmn:sequenceFlow>

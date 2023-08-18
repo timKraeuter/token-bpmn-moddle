@@ -154,7 +154,7 @@ describe('read', function() {
         );
       });
 
-      it('on ServiceTask', async function() {
+      it('read running processes', async function() {
 
         // given
         var file = 'process-instance.part.bpmn';
@@ -166,6 +166,38 @@ describe('read', function() {
         expect(serviceTask).to.jsonEqual({
           $type: 'bpmn:Process',
           runningProcess: [ '1', '2', '3' ]
+        }
+        );
+      });
+
+      it('read activity tokens', async function() {
+
+        // given
+        var file = 'activity-token.part.bpmn';
+
+        // when
+        var { rootElement: serviceTask } = await fromFile(file, 'bpmn:Activity');
+
+        // then
+        expect(serviceTask).to.jsonEqual({
+          $type: 'bpmn:Activity',
+          token: [ '1', '2', '3' ]
+        }
+        );
+      });
+
+      it('read sequence flow tokens', async function() {
+
+        // given
+        var file = 'sequenceFlow-token.part.bpmn';
+
+        // when
+        var { rootElement: serviceTask } = await fromFile(file, 'bpmn:SequenceFlow');
+
+        // then
+        expect(serviceTask).to.jsonEqual({
+          $type: 'bpmn:SequenceFlow',
+          token: [ '1', '2', '3' ]
         }
         );
       });

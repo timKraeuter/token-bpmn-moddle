@@ -299,6 +299,21 @@
       ]
     },
     {
+      "name": "Token",
+      "isAbstract": true,
+      "extends": [
+        "bpmn:Activity",
+        "bpmn:SequenceFlow"
+      ],
+      "properties": [
+        {
+          "name": "token",
+          "type": "String",
+          "isMany": true
+        }
+      ]
+    },
+    {
       "name": "Process",
       "isAbstract": true,
       "extends": [
