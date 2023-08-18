@@ -306,8 +306,8 @@
       ],
       "properties": [
         {
-          "name": "processes",
-          "type": "ProcessInstance",
+          "name": "runningProcess",
+          "type": "String",
           "isMany": true
         },
         {
@@ -335,24 +335,6 @@
           "isAttr": true,
           "type": "Boolean",
           "default": true
-        }
-      ]
-    },
-    {
-      "name": "ProcessInstance",
-      "superClass": [
-        "Element"
-      ],
-      "meta": {
-        "allowedIn": [
-          "camunda:Process"
-        ]
-      },
-      "properties": [
-        {
-          "name": "id",
-          "isAttr": true,
-          "type": "String"
         }
       ]
     },

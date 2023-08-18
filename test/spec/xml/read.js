@@ -165,15 +165,7 @@ describe('read', function() {
         // then
         expect(serviceTask).to.jsonEqual({
           $type: 'bpmn:Process',
-          extensionElements: {
-            $type: 'bpmn:ExtensionElements',
-            values: [
-              {
-                $type: 'camunda:ProcessInstance',
-                id: 'Process_1'
-              },
-            ],
-          },
+          runningProcess: [ '1', '2', '3' ]
         }
         );
       });
