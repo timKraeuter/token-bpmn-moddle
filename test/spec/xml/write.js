@@ -12,18 +12,18 @@ describe("write", function () {
   describe("should export", function () {
     it("running processes", async function () {
       // given
-      var element = moddle.create("bpmn:Process", {
+      const element = moddle.create("bpmn:Process", {
         runningProcess: ["1", "2", "3"],
       });
 
-      var expectedXML =
+      const expectedXML =
         '<bpmn:process xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:token="http://tk/schema/1.0/token">' +
         "<token:runningProcess>1</token:runningProcess>" +
         "<token:runningProcess>2</token:runningProcess>" +
         "<token:runningProcess>3</token:runningProcess></bpmn:process>";
 
       // when
-      var { xml } = await write(element);
+      const { xml } = await write(element);
 
       // then
       expect(xml).to.eql(expectedXML);
@@ -31,18 +31,18 @@ describe("write", function () {
 
     it("tokens at activities", async function () {
       // given
-      var element = moddle.create("bpmn:Activity", {
+      const element = moddle.create("bpmn:Activity", {
         token: ["1", "2", "3"],
       });
 
-      var expectedXML =
+      const expectedXML =
         '<bpmn:activity xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:token="http://tk/schema/1.0/token">' +
         "<token:token>1</token:token>" +
         "<token:token>2</token:token>" +
         "<token:token>3</token:token></bpmn:activity>";
 
       // when
-      var { xml } = await write(element);
+      const { xml } = await write(element);
 
       // then
       expect(xml).to.eql(expectedXML);
@@ -50,18 +50,18 @@ describe("write", function () {
 
     it("tokens at sequence flows", async function () {
       // given
-      var element = moddle.create("bpmn:SequenceFlow", {
+      const element = moddle.create("bpmn:SequenceFlow", {
         token: ["1", "2", "3"],
       });
 
-      var expectedXML =
+      const expectedXML =
         '<bpmn:sequenceFlow xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:token="http://tk/schema/1.0/token">' +
         "<token:token>1</token:token>" +
         "<token:token>2</token:token>" +
         "<token:token>3</token:token></bpmn:sequenceFlow>";
 
       // when
-      var { xml } = await write(element);
+      const { xml } = await write(element);
 
       // then
       expect(xml).to.eql(expectedXML);

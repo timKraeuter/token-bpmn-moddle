@@ -1,11 +1,7 @@
 "use strict";
 
-var readFile = require("../helper").readFile,
-  createModdle = require("../helper").createModdle;
-
-var BpmnModdle = require("bpmn-moddle");
-
-var tokenDescriptor = require("../../resources/token.json");
+const BpmnModdle = require("bpmn-moddle");
+const tokenDescriptor = require("../../resources/token.json");
 
 describe("token-bpmn-moddle", function () {
   describe("schema", function () {

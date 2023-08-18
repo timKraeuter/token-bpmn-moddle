@@ -11,11 +11,18 @@
       <token:token>2</token:token>
       <token:token>3</token:token>
     </bpmn:task>
-    <bpmn:sequenceFlow id="Flow_0vpktvg" sourceRef="StartEvent_0866obd" targetRef="Activity_1vbr3nv" />
+    <bpmn:sequenceFlow id="Flow_0vpktvg" sourceRef="StartEvent_0866obd" targetRef="Activity_1vbr3nv">
+      <token:token>1</token:token>
+      <token:token>2</token:token>
+      <token:token>3</token:token>
+    </bpmn:sequenceFlow>
     <bpmn:endEvent id="Event_0ztwqvc" name="end">
       <bpmn:incoming>Flow_0jfggw6</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0jfggw6" sourceRef="Activity_1vbr3nv" targetRef="Event_0ztwqvc" />
+    <token:runningProcess>1</token:runningProcess>
+    <token:runningProcess>2</token:runningProcess>
+    <token:runningProcess>3</token:runningProcess>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0f853jj">

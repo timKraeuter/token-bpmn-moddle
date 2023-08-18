@@ -6,7 +6,7 @@ var readFile = require("../../helper").readFile,
 describe("import -> export roundtrip", function () {
   function stripSpaces(xml) {
     return xml
-      .replace(/\n|\r/g, "")
+      .replace(/[\n\r]/g, "")
       .replace(/\s{2,}/g, " ")
       .replace(/\s\/>/g, "/>")
       .replace(/>\s+</g, "><");
@@ -14,16 +14,16 @@ describe("import -> export roundtrip", function () {
 
   function validateExport(file) {
     return async function () {
-      var xml = stripSpaces(readFile(file));
+      const xml = stripSpaces(readFile(file));
 
-      var moddle = createModdle();
+      const moddle = createModdle();
 
-      var { rootElement: definitions } = await moddle.fromXML(
+      const { rootElement: definitions } = await moddle.fromXML(
         xml,
         "bpmn:Definitions",
       );
 
-      var { xml: savedXML } = await moddle.toXML(definitions);
+      let { xml: savedXML } = await moddle.toXML(definitions);
 
       savedXML = stripSpaces(savedXML);
 
@@ -33,13 +33,8 @@ describe("import -> export roundtrip", function () {
 
   describe("should keep token attributes", function () {
     it(
-      "tokens at activities and sequence flows",
-      validateExport("test/fixtures/xml/simple.bpmn"),
-    );
-
-    xit(
-      "running processes",
-      validateExport("test/fixtures/xml/inputOutput-nestedList.bpmn"),
+      "running processes and tokens at activities and sequence flows",
+      validateExport("test/fixtures/xml/roundtrip.bpmn"),
     );
   });
 });
