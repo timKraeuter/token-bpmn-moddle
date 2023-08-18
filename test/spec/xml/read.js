@@ -230,7 +230,7 @@ describe('read', function() {
         $type: 'camunda:Script',
         scriptFormat: 'groovy',
         resource: 'null',
-        value: '\r\n  foo = bar;\r\n'
+        value: '\n  foo = bar;\n'
       });
     });
 
@@ -405,7 +405,7 @@ describe('read', function() {
         expect(parameter).to.jsonEqual({
           $type: 'camunda:InputParameter',
           name: 'foo',
-          value: '\r\n  BAR\r\n'
+          value: '\n  BAR\n'
         });
       });
 
