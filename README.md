@@ -20,6 +20,13 @@ Perform a complete build of the application via
 npm run all
 ```
 
+Publish an npm module
+
+```
+npm login
+npm publish --access public
+```
+
 ## Acknowledgements
 
 I used [camunda-bpmn-moddle](https://github.com/camunda/camunda-bpmn-moddle) as a starting point for this project.
