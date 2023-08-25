@@ -16,51 +16,51 @@ describe("read", function () {
       return read(contents, root, opts);
     }
 
-    it("read running processes", async function () {
+    it("read process snapshot", async function () {
       // given
-      const file = "process-instance.part.bpmn";
+      const file = "snapshot.part.bpmn";
 
       // when
-      const { rootElement: serviceTask } = await fromFile(file, "bpmn:Process");
+      const { rootElement: collaboration } = await fromFile(
+        file,
+        "bpmn:Collaboration",
+      );
 
       // then
-      expect(serviceTask).to.jsonEqual({
+      expect(collaboration).to.jsonEqual({
+        $type: "bpmn:Collaboration",
+        id: "Collaboration_1qmax72",
+        artifacts: [
+          {
+            $type: "bt:ProcessSnapshot",
+            id: "ProcessSnapshot_1eoyn6s",
+          },
+        ],
+      });
+    });
+
+    it("read tokens", async function () {
+      // given
+      const file = "token.part.bpmn";
+
+      // when
+      const { rootElement: process } = await fromFile(file, "bpmn:Process");
+
+      // then
+      expect(process).to.jsonEqual({
         $type: "bpmn:Process",
-        runningProcess: ["1", "2", "3"],
-      });
-    });
-
-    it("read activity tokens", async function () {
-      // given
-      const file = "activity-token.part.bpmn";
-
-      // when
-      const { rootElement: serviceTask } = await fromFile(
-        file,
-        "bpmn:Activity",
-      );
-
-      // then
-      expect(serviceTask).to.jsonEqual({
-        $type: "bpmn:Activity",
-        token: ["1", "2", "3"],
-      });
-    });
-
-    it("read sequence flow tokens", async function () {
-      // given
-      const file = "sequenceFlow-token.part.bpmn";
-
-      // when
-      const { rootElement: serviceTask } = await fromFile(
-        file,
-        "bpmn:SequenceFlow",
-      );
-
-      // then
-      expect(serviceTask).to.jsonEqual({
-        $type: "bpmn:SequenceFlow",
-        token: ["1", "2", "3"],
+        id: "Process_1",
+        isExecutable: false,
+        artifacts: [
+          {
+            $type: "bt:Token",
+            id: "Token_15kjo9s",
+          },
+          {
+            $type: "bt:Token",
+            id: "Token_1uiyzaw",
+          },
+        ],
       });
     });
   });

@@ -7,7 +7,6 @@ We use processes and tokens to describe the state of running BPMN processes.
 
 ## Building the Project
 
-
 Execute the test via
 
 ```

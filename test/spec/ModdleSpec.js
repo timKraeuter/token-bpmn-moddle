@@ -9,8 +9,8 @@ describe("token-bpmn-moddle", function () {
       // then
       expect(tokenDescriptor).to.exist;
 
-      expect(tokenDescriptor.uri).to.eql("http://tk/schema/1.0/token");
-      expect(tokenDescriptor.prefix).to.eql("token");
+      expect(tokenDescriptor.uri).to.eql("http://tk/schema/1.0/bt");
+      expect(tokenDescriptor.prefix).to.eql("bt");
     });
   });
 
@@ -18,14 +18,14 @@ describe("token-bpmn-moddle", function () {
     it("should extend bpmn-moddle", function () {
       // given
       var moddle = new BpmnModdle({
-        camunda: tokenDescriptor,
+        bt: tokenDescriptor,
       });
 
       // when
       var serviceTask = moddle.create("bpmn:Activity");
 
       // then
-      expect(serviceTask.$instanceOf("token:Token")).to.be.true;
+      expect(serviceTask.$instanceOf("bpmn:Activity")).to.be.true;
     });
   });
 });
