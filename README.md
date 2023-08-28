@@ -5,7 +5,7 @@
 This project defines the token and process namespace extensions for BPMN 2.0 as a [moddle](https://github.com/bpmn-io/moddle) descriptor.
 We use processes and tokens to describe the state of running BPMN processes.
 
-It is published as an [npm package](https://www.npmjs.com/package/token-bpmn-moddle).
+The project is published as an [npm package](https://www.npmjs.com/package/token-bpmn-moddle).
 
 ## Building the Project
 
