@@ -13,7 +13,7 @@
       <bpmn:incoming>Flow_1cskd4m</bpmn:incoming>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1cskd4m" sourceRef="StartEvent_1" targetRef="Activity_1rnhmha" />
-    <bt:token id="Token_15kjo9s" />
+    <bt:token id="Token_15kjo9s" shouldExist="false"/>
     <bt:token id="Token_1uiyzaw" />
     <bpmn:association id="Association_14cxust" sourceRef="Flow_1cskd4m" targetRef="Token_1uiyzaw" />
     <bpmn:association id="Association_1leglu8" sourceRef="Activity_1rnhmha" targetRef="Token_15kjo9s" />
