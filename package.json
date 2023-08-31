@@ -1,6 +1,6 @@
 {
   "name": "token-bpmn-moddle",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Token moddle extensions for BPMN 2.0",
   "scripts": {
     "all": "run-s lint test",
