@@ -10,11 +10,11 @@ describe("write", function () {
   }
 
   describe("should export", function () {
-    it("tokens", async function () {
+    it("tokens with attributes", async function () {
       // given
       const element = moddle.create("bpmn:Process", {
         artifacts: [moddle.create("bt:Token", {id: "1", shouldExist: false}),
-          moddle.create("bt:Token", {id: "2",})],
+          moddle.create("bt:Token", {id: "2"})],
       });
 
       const expectedXML =
@@ -26,6 +26,42 @@ describe("write", function () {
 
       // when
       const {xml} = await write(element);
+
+      // then
+      expect(xml).to.eql(expectedXML);
+    });
+
+    it("tokens with process snapshot references", async function () {
+      // given
+      const snapshot1 = moddle.create("bt:ProcessSnapshot",
+          {id: "1"});
+      const defs = moddle.create("bpmn:Definitions", {
+        rootElements: [
+          moddle.create("bpmn:Collaboration", {
+            artifacts: [
+              snapshot1,
+            ],
+          }),
+          moddle.create("bpmn:Process", {
+            artifacts: [moddle.create("bt:Token",
+                {id: "1", processSnapshot: snapshot1})],
+          }),
+        ]
+      });
+      // given
+
+      const expectedXML =
+          "<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bt=\"http://tk/schema/1.0/bt\">"
+          + "<bpmn:collaboration>"
+            + "<bt:processSnapshot id=\"1\" />"
+          + "</bpmn:collaboration>"
+          + "<bpmn:process>"
+            + "<bt:token id=\"1\" processSnapshot=\"1\" />"
+          + "</bpmn:process>"
+          + "</bpmn:definitions>";
+
+      // when
+      const {xml} = await write(defs);
 
       // then
       expect(xml).to.eql(expectedXML);
