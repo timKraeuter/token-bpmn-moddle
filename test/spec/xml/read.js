@@ -4,7 +4,7 @@ const readFile = require("../../helper").readFile,
     createModdle = require("../../helper").createModdle;
 
 describe("read", function () {
-    describe("should read extensions", function () {
+    describe("should read", function () {
         const moddle = createModdle();
 
         function read(xml, root, opts) {
@@ -16,7 +16,7 @@ describe("read", function () {
             return read(contents, root, opts);
         }
 
-        it("read process snapshot", async function () {
+        it("process snapshots with attributes", async function () {
             // given
             const file = "snapshot.part.bpmn";
 
@@ -44,7 +44,7 @@ describe("read", function () {
             });
         });
 
-        it("read tokens", async function () {
+        it("tokens with attributes", async function () {
             // given
             const file = "token.part.bpmn";
 
