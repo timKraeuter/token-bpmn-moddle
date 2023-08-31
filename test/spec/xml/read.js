@@ -34,6 +34,7 @@ describe("read", function () {
                     {
                         $type: "bt:ProcessSnapshot",
                         id: "ProcessSnapshot_1eoyn6s",
+                        shouldExist: false
                     },
                 ],
             });
