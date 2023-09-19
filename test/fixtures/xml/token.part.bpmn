@@ -1,4 +1,6 @@
 <bpmn:process id="Process_1" isExecutable="false">
-    <bt:token id="Token_0iuqd2g" shouldExist="false"/>
-    <bt:token id="Token_1uiyzaw" />
+    <bpmn:extensionElements>
+      <bt:token id="Token_0iuqd2g" shouldExist="false"/>
+      <bt:token id="Token_1uiyzaw" />
+    </bpmn:extensionElements>
 </bpmn:process>
