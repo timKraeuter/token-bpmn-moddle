@@ -10,7 +10,7 @@
   <bpmn:process id="Process_1" isExecutable="false">
     <bpmn:extensionElements>
       <bt:token id="Token_15kjo9s" shouldExist="false" />
-      <bt:token id="Token_1uiyzaw" />
+      <bt:token id="Token_1uiyzaw" processSnapshot="ProcessSnapshot_1eoyn6s" />
     </bpmn:extensionElements>
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1cskd4m</bpmn:outgoing>
