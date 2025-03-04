@@ -36,11 +36,12 @@ describe("read", function () {
             {
               $type: "bt:ProcessSnapshot",
               id: "ProcessSnapshot_1eoyn6s",
-            shouldExist: false
-                    },
-                    {
-                        $type: "bt:ProcessSnapshot",
-                        id: "ProcessSnapshot_1eoyn7s"},
+              shouldExist: false,
+            },
+            {
+              $type: "bt:ProcessSnapshot",
+              id: "ProcessSnapshot_1eoyn7s",
+            },
           ],
         },
       });
