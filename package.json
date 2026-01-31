@@ -27,18 +27,18 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bpmn-moddle": "^9.0.4",
-    "chai": "^4.3.0",
-    "eslint": "^8.25.0",
-    "eslint-plugin-bpmn-io": "^1.0.0",
+    "bpmn-moddle": "^10.0.0",
+    "chai": "^6.2.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-bpmn-io": "^2.2.0",
     "esm": "^3.2.25",
-    "glob": "^10.0.0",
-    "mocha": "^10.0.0",
+    "glob": "^13.0.0",
+    "mocha": "^11.7.5",
     "npm-run-all": "^4.1.2",
-    "p-series": "^2.1.0",
-    "xsd-schema-validator": "^0.7.0",
-    "prettier": "3.0.2",
-    "eslint-config-prettier": "^9.0.0"
+    "p-series": "^3.0.0",
+    "prettier": "^3.8.1",
+    "xsd-schema-validator": "^0.11.0"
   },
   "files": [
     "resources"

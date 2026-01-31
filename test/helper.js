@@ -8,7 +8,7 @@ function readFile(filename) {
 
 module.exports.readFile = readFile;
 
-var BpmnModdle = require("bpmn-moddle");
+var { BpmnModdle } = require("bpmn-moddle");
 
 var tokenDescriptor = require("../resources/token.json");
 

@@ -1,6 +1,6 @@
 "use strict";
 
-const BpmnModdle = require("bpmn-moddle");
+const { BpmnModdle } = require("bpmn-moddle");
 const tokenDescriptor = require("../../resources/token.json");
 
 describe("token-bpmn-moddle", function () {
